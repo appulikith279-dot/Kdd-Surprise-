@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My KDD ❤️</title>
+<style>
+body{
+margin:0;font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+display:flex;justify-content:center;align-items:center;
+height:100vh;color:#fff;overflow:hidden}
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:28px;border-radius:22px;
+max-width:700px;width:90%;text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+animation:fade .7s}
+h1{margin-top:0}
+button{
+margin-top:20px;padding:12px 28px;
+border:none;border-radius:30px;
+background:#fff;color:#d6336c;
+font-size:16px;font-weight:bold;cursor:pointer}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.heart{
+position:fixed;color:#fff;font-size:20px;
+animation:float 8s linear infinite;opacity:.7}
+@keyframes float{
+0%{transform:translateY(110vh)}
+100%{transform:translateY(-20vh)}
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h1 id="title">🎀 A Little Surprise For My Most Valuable Treasure 💖</h1>
+<p id="text">Tap the button below, my KDD. ❤️</p>
+<button onclick="nextPage()">Begin ✨</button>
+</div>
+<script>
+const pages=[
+{t:"Happy Morning ☀️",b:`Happy Morning, my <b>Most Valuable Treasure in My Life</b>. 🎀💖<br><br>I welcome you this beautiful morning with a heart full of gratitude and unconditional love. ❤️`},
+{t:"My Heart ❤️",b:`If I made any mistakes yesterday, my Lordship, I sincerely seek your forgiveness. I'll learn from them and do my best not to repeat them.<br><br>I'm giving my 100% every day to become a better version of myself, so that one day my KDD will always be proud to say, <i>"He's my man."</i>`},
+{t:"A Promise 🤝",b:`Problems and sufferings find everyone. If they ever find you, you'll never have to face them alone. I'll always stand beside you, holding your hand firmly until you feel safe, until your heart feels light again. We'll overcome everything together.`},
+{t:"Forever 💝",b:`You're not just my happiness... you're my forever happiness, my love.<br><br>May this month bring you beautiful memories, endless smiles, good health, peace, and countless blessings. I hope every sunrise reminds you how deeply you're loved and how precious you are.<br><br><b>Love you with all that I have. ✊🏻💝<br><br>~ Your 🆎</b>`}
+];
+let i=-1;
+function nextPage(){
+i++;
+if(i>=pages.length){i=0;}
+document.getElementById("title").innerHTML=pages[i].t;
+document.getElementById("text").innerHTML=pages[i].b;
+document.querySelector("button").textContent=i===pages.length-1?"Read Again ❤️":"Next ❤️";
+}
+for(let n=0;n<20;n++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDelay=(Math.random()*8)+"s";
+h.style.fontSize=(14+Math.random()*18)+"px";
+document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
