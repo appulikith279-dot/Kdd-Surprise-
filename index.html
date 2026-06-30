@@ -1,22 +1,80 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Flight KDD-025 - Romantic Surprise</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flight KDD-025</title>
 <style>
-body{margin:0;font-family:system-ui;background:linear-gradient(135deg,#ff5c8a,#8b5cf6);color:#fff;overflow:hidden}
-.page{display:none;position:absolute;inset:0;justify-content:center;align-items:center;padding:20px}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg,#ffd7e6,#ffeef6);
+overflow:hidden;
+}
+.page{position:absolute;inset:0;display:none;justify-content:center;align-items:center;padding:20px}
 .show{display:flex}
-.card{max-width:760px;width:94%;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);border-radius:24px;padding:24px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.3)}
-button{padding:12px 24px;border:none;border-radius:999px;font-weight:bold}
-pre{white-space:pre-wrap;text-align:left;font-family:inherit;max-height:55vh;overflow:auto}
+.card{
+width:min(92vw,760px);
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(10px);
+border-radius:24px;
+padding:24px;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+text-align:center;
+color:#222;
+}
+h1,h2,p{color:#222}
+button{
+background:#ff4f8b;
+color:#fff;
+border:none;
+padding:12px 22px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer
+}
+pre{
+white-space:pre-wrap;
+text-align:left;
+font-family:inherit;
+color:#111;
+background:#fff8fb;
+padding:15px;
+border-radius:12px;
+max-height:55vh;
+overflow:auto;
+line-height:1.6;
+border:1px solid #ffd0df;
+}
 .f{position:fixed;top:-30px;font-size:22px;animation:fall linear infinite}
 @keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
 #heart{font-size:72px;cursor:pointer}
-</style></head>
+</style>
+</head>
 <body>
 <div id="flowers"></div>
-<div id="p1" class="page show"><div class="card"><h1>✈️ Flight KDD‑025</h1><p>Destination: Forever ❤️</p><button onclick="go(2)">Board Flight</button></div></div>
-<div id="p2" class="page"><div class="card"><h2>🎫 Boarding Pass</h2><p><b>Passenger:</b> KDD 💖</p><p><b>Seat:</b> Forever</p><button onclick="go(3)">Open Envelope</button></div></div>
-<div id="p3" class="page"><div class="card"><h2>💌 Your Letter</h2><pre>Happy Morning, my "Most Valuable Treasure in My Life." 🎀💖
+
+<div id="p1" class="page show">
+<div class="card">
+<h1>✈️ Flight KDD-025</h1>
+<p>Destination: Forever ❤️</p>
+<button onclick="go(2)">Board Flight</button>
+</div></div>
+
+<div id="p2" class="page">
+<div class="card">
+<h2>🎫 Boarding Pass</h2>
+<p><b>Passenger:</b> KDD 💖</p>
+<p><b>Gate:</b> LOVE</p>
+<p><b>Seat:</b> Forever</p>
+<button onclick="go(3)">Open Envelope</button>
+</div></div>
+
+<div id="p3" class="page">
+<div class="card">
+<h2>💌 A Letter For You</h2>
+<pre>Happy Morning, my "Most Valuable Treasure in My Life." 🎀💖
 
 I welcome you this beautiful morning with a heart full of gratitude and unconditional love. ❤️
 
@@ -34,11 +92,41 @@ May this new month bring you beautiful memories, endless smiles, good health, pe
 
 Love you with all that I have. "Every journey has a destination. Mine has always been you."✊🏻💝
 
-~ Your 🆎</pre><button onclick="go(4)">Continue</button></div></div>
-<div id="p4" class="page"><div class="card"><h2>🌹 Flowers For You</h2><p>🍫 A sweet chocolate and a thousand flowers could never match your smile.</p><button onclick="go(5)">Final Surprise</button></div></div>
-<div id="p5" class="page"><div class="card"><h1>✨ Every journey has a destination.</h1><h2>Mine has always been you. ❤️</h2><p>Tap the heart 7 times.</p><div id="heart">❤️</div><p id="egg"></p></div></div>
+~ Your 🆎</pre>
+<button onclick="go(4)">Continue</button>
+</div></div>
+
+<div id="p4" class="page">
+<div class="card">
+<h2>🍫 Chocolate Surprise</h2>
+<p>Every chocolate is sweet... but not as sweet as your smile. 🌹</p>
+<button onclick="go(5)">Final Surprise</button>
+</div></div>
+
+<div id="p5" class="page">
+<div class="card">
+<h1>✨ Every journey has a destination.</h1>
+<h2>Mine has always been you. ❤️</h2>
+<p>Tap the heart 7 times.</p>
+<div id="heart">❤️</div>
+<p id="egg"></p>
+</div></div>
+
 <script>
-function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));document.getElementById('p'+n).classList.add('show')}
-for(let i=0;i<40;i++){let d=document.createElement('div');d.className='f';d.textContent=Math.random()>.5?'🌹':'🌸';d.style.left=Math.random()*100+'vw';d.style.animationDuration=(4+Math.random()*5)+'s';d.style.animationDelay=(-Math.random()*8)+'s';flowers.appendChild(d);}
-let c=0;heart.onclick=()=>{c++;if(c>=7)egg.innerHTML='🥚 Secret Found! I will choose you in every lifetime. 💖';}
-</script></body></html>
+function go(n){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+document.getElementById('p'+n).classList.add('show');
+}
+for(let i=0;i<40;i++){
+let d=document.createElement('div');
+d.className='f';
+d.textContent=Math.random()>.5?'🌹':'🌸';
+d.style.left=Math.random()*100+'vw';
+d.style.animationDuration=(4+Math.random()*5)+'s';
+d.style.animationDelay=(-Math.random()*8)+'s';
+flowers.appendChild(d);
+}
+let c=0;
+heart.onclick=()=>{c++;if(c>=7)egg.innerHTML="<b>🥚 Secret Found!</b><br>I will choose you in every lifetime. 💖";}
+</script>
+</body></html>
