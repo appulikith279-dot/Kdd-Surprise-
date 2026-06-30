@@ -1,29 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Flight KDD-025</title>
 <style>
-body{margin:0;font-family:system-ui,sans-serif;background:linear-gradient(160deg,#081229,#24133d);color:#fff;overflow:hidden}
-*{box-sizing:border-box} .screen{display:none;height:100vh;align-items:center;justify-content:center;flex-direction:column;padding:24px;text-align:center;animation:fade .8s}
-.active{display:flex}.card{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);padding:22px;border-radius:22px;max-width:420px;width:100%;box-shadow:0 0 30px rgba(255,192,203,.12)}
-button{margin-top:20px;padding:14px 24px;border:none;border-radius:999px;background:linear-gradient(90deg,#ff7eb6,#ffd27d);font-weight:700}
-@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+body{margin:0;font-family:system-ui;background:linear-gradient(160deg,#081229,#24133d);color:#fff;overflow:hidden}
+.screen{display:none;height:100vh;align-items:center;justify-content:center;flex-direction:column;padding:22px;text-align:center}.active{display:flex}
+.card{max-width:430px;width:100%;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);padding:22px;border-radius:22px}
+button{margin:10px;padding:13px 22px;border:0;border-radius:999px;background:linear-gradient(90deg,#ff7eb6,#ffd27d);font-weight:bold}
 .star{position:fixed;width:2px;height:2px;background:#fff;border-radius:50%;animation:tw 3s infinite alternate}
-@keyframes tw{to{opacity:.2;transform:translateY(-10px)}}
-#plane{position:absolute;left:-30%;top:35%;font-size:2rem;animation:fly 8s linear infinite}
-@keyframes fly{to{left:120%}}
-.heart{font-size:5rem;animation:pulse 2s infinite}
-@keyframes pulse{50%{transform:scale(1.1)}}
-.envelope{font-size:5rem;cursor:pointer;animation:drop 1.5s}
-@keyframes drop{from{transform:translateY(-250px)}}
-.letter{display:none;white-space:pre-wrap;text-align:left;line-height:1.6;max-height:60vh;overflow:auto}
-.flower{position:fixed;top:-20px;animation:fall 6s linear forwards;font-size:24px}
-@keyframes fall{to{transform:translateY(110vh)}}
-</style>
-</head>
-<body>
+@keyframes tw{to{opacity:.2;transform:translateY(-8px)}} .letter{display:none;white-space:pre-wrap;text-align:left;line-height:1.6;max-height:60vh;overflow:auto}
+.envelope{font-size:5rem;cursor:pointer}.flower{position:fixed;top:-20px;font-size:24px;animation:fall 6s linear forwards}@keyframes fall{to{transform:translateY(110vh)}}
+#plane{position:absolute;left:-20%;top:30%;font-size:2rem;animation:fly 8s linear infinite}@keyframes fly{to{left:120%}}
+.heart{font-size:5rem;animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(1.1)}}
+</style></head><body>
 <!--
 Flight KDD-025
 
@@ -40,32 +28,18 @@ Mission:
 From:
 🆎
 -->
-<div id="stars"></div>
-
-<section class="screen active" id="s1"><div class="card"><h2 id="atc">Connecting to Air Traffic Control...</h2></div></section>
-
-<section class="screen" id="s2"><div class="card"><h2>✈️ Flight KDD-025</h2><p><b>Passenger:</b> 🎀 My Most Valuable Treasure</p><p><b>Destination:</b> ❤️ Her Smile</p><p><b>Status:</b> Ready For Boarding</p><button onclick="go(3)">Begin Our Journey ❤️</button></div></section>
-
-<section class="screen" id="s3"><div class="card"><p>A special delivery has arrived...</p><div class="envelope" onclick="openLetter()">💌</div><div id="letter" class="letter"></div></div></section>
-
-<section class="screen" id="s5"><div class="card"><h1>🌹</h1><h2>For Someone Truly Special</h2><button onclick="go(6)">Continue ❤️</button></div></section>
-
-<section class="screen" id="s6"><div class="card"><h1>🍫</h1><p>If I could...<br>I'd hand this to you in person.<br>Until then,<br>please accept this sweet little surprise. ❤️</p><button onclick="go(7)">Continue ✨</button></div></section>
-
-<section class="screen" id="s7"><div id="plane">✈️</div><div class="card"><div class="heart">❤️</div><h2>Flight KDD-025</h2><h3>Mission Completed ❤️</h3><p>Every journey has a destination.<br>Mine has always been you.<br><br>Thank you for taking this journey with me.<br>❤️</p></div></section>
-
+<section id=s1 class="screen active"><div class=card><h2 id=atc>Connecting to Air Traffic Control...</h2></div></section>
+<section id=s2 class=screen><div class=card><h2>✈️ Flight KDD-025</h2><p>🎀 My Most Valuable Treasure</p><p>❤️ Her Smile</p><button onclick="go(3)">Begin Our Journey ❤️</button></div></section>
+<section id=s3 class=screen><div class=card><p>A special delivery has arrived...</p><div class=envelope onclick="openLetter()">💌</div><div id=letter class=letter></div></div></section>
+<section id=s5 class=screen><div class=card><h1>🌹</h1><h2>For Someone Truly Special</h2><button onclick="go(6)">Continue ❤️</button></div></section>
+<section id=s6 class=screen><div class=card><h1>🍫</h1><p>If I could...<br>I'd hand this to you in person.<br>Until then,<br>please accept this sweet little surprise. ❤️</p><button onclick="go(7)">Continue ✨</button></div></section>
+<section id=s7 class=screen><div id=plane>✈️</div><div class=card><div class=heart>❤️</div><h2>Flight KDD-025</h2><h3>Mission Completed ❤️</h3><p>Every journey has a destination.<br>Mine has always been you.<br><br>Thank you for taking this journey with me. ❤️</p><button onclick="restart()">❤️ Let's Continue Our Journey One More Time</button></div></section>
 <script>
-for(let i=0;i<80;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';s.style.animationDelay=Math.random()*3+'s';document.body.appendChild(s);}
-const seq=["Connecting to Air Traffic Control...","✓ Connection Established","Incoming Flight...","✈️"];
-let i=0;
-setInterval(()=>{if(i<seq.length){atc.textContent=seq[i++]}else if(s1.classList.contains('active'))go(2)},1200);
-
-function go(n){
-document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
-document.getElementById('s'+n).classList.add('active');
-if(n==5)flowers();
-}
-const text=`Happy Morning, my "Most Valuable Treasure in My Life." 🎀💖
+for(let i=0;i<80;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';document.body.appendChild(s);}
+let seq=["Connecting to Air Traffic Control...","✓ Connection Established","Incoming Flight...","✈️"],i=0;
+let iv=setInterval(()=>{if(i<seq.length)atc.textContent=seq[i++];else{clearInterval(iv);go(2)}},1200);
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');if(n==5)flowers();}
+const msg=`Happy Morning, my "Most Valuable Treasure in My Life." 🎀💖
 
 I welcome you this beautiful morning with a heart full of gratitude and unconditional love. ❤️
 
@@ -86,11 +60,7 @@ Love you with all that I have.
 "Every journey has a destination. Mine has always been you." ✊🏻💝
 
 ~ Your 🆎`;
-function openLetter(){
-document.getElementById('letter').style.display='block';
-let el=document.getElementById('letter');el.textContent='';let j=0;
-let t=setInterval(()=>{el.textContent+=text[j++]||'';if(j>text.length){clearInterval(t);let b=document.createElement('button');b.textContent='Continue ❤️';b.onclick=()=>go(5);el.appendChild(document.createElement('br'));el.appendChild(b);}},18);
-}
-function flowers(){for(let k=0;k<40;k++){setTimeout(()=>{let f=document.createElement('div');f.className='flower';f.textContent=Math.random()>.5?'🌹':'🌸';f.style.left=Math.random()*100+'vw';document.body.appendChild(f);setTimeout(()=>f.remove(),6000)},k*150)}}
-</script>
-</body></html>
+function openLetter(){let el=letter;el.style.display='block';el.textContent='';let j=0;let t=setInterval(()=>{if(j<msg.length){el.textContent+=msg[j++]}else{clearInterval(t);let d=document.createElement('div');d.innerHTML='<br><button onclick="go(5)">Continue ❤️</button>';el.appendChild(d)}},18)}
+function flowers(){for(let k=0;k<35;k++)setTimeout(()=>{let f=document.createElement('div');f.className='flower';f.textContent=Math.random()>.5?'🌹':'🌸';f.style.left=Math.random()*100+'vw';document.body.appendChild(f);setTimeout(()=>f.remove(),6000)},k*150)}
+function restart(){letter.style.display='none';letter.textContent='';go(1);i=0;iv=setInterval(()=>{if(i<seq.length)atc.textContent=seq[i++];else{clearInterval(iv);go(2)}},1200);}
+</script></body></html>
