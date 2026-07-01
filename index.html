@@ -33,7 +33,7 @@ From:
 <section id=s3 class=screen><div class=card><p>A special delivery has arrived...</p><div class=envelope onclick="openLetter()">💌</div><div id=letter class=letter></div></div></section>
 <section id=s5 class=screen><div class=card><h1>🌹</h1><h2>For Someone Truly Special</h2><button onclick="go(6)">Continue ❤️</button></div></section>
 <section id=s6 class=screen><div class=card><h1>🍫</h1><p>If I could...<br>I'd hand this to you in person.<br>Until then,<br>please accept this sweet little surprise. ❤️</p><button onclick="go(7)">Continue ✨</button></div></section>
-<section id=s7 class=screen><div id=plane>✈️</div><div class=card><div class=heart>❤️</div><h2>Flight KDD-025</h2><h3>Mission Completed ❤️</h3><p>Every journey has a destination.<br>Mine has always been you.<br><br>Thank you for taking this journey with me. ❤️</p><button onclick="restart()">❤️ Let's Continue Our Journey One More Time</button></div></section>
+<section id=s7 class=screen><div id=plane>✈️</div><div class=card><div class=heart>❤️</div><h2>Flight KDD-025</h2><h3>Mission Completed ❤️</h3><p>Every journey has a destination.<br>Mine has always been you.<br><br>Thank you for reading until the end.<br><br>You just made someone's heart smile today. ❤️</p><button onclick="restart()">❤️ Let's Continue Our Journey One More Time</button></div></section>
 <script>
 for(let i=0;i<80;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';document.body.appendChild(s);}
 let seq=["Connecting to Air Traffic Control...","✓ Connection Established","Incoming Flight...","✈️"],i=0;
@@ -43,7 +43,7 @@ const msg=`Happy Morning, my "Most Valuable Treasure in My Life." 🎀💖
 
 I welcome you this beautiful morning with a heart full of gratitude and unconditional love. ❤️
 
-If I made any mistakes last month, my Lordship, I sincerely seek your forgiveness. 😄 I'll learn from them and do my best not to repeat them.
+If I made any mistakes yesterday, my Lordship, I sincerely seek your forgiveness. 😄 I'll learn from them and do my best not to repeat them.
 
 I'm giving my 100% every single day to become a better version of myself, so that one day my KDD will always be proud to say, "He's my man." ❤️
 
@@ -60,12 +60,6 @@ Love you with all that I have.
 "Every journey has a destination. Mine has always been you." ✊🏻💝
 
 ~ Your 🆎`;
-<!DOCTYPE html><html><body><p>This patch file contains the updated ending text only.</p>
-<p>Replace:</p>
-<pre>Thank you for taking this journey with me. ❤️</pre>
-<p>With:</p>
-<pre>Thank you for reading until the end.<br><br>You just made someone's heart smile today. ❤️</pre>
-</body></html>  
 function openLetter(){let el=letter;el.style.display='block';el.textContent='';let j=0;let t=setInterval(()=>{if(j<msg.length){el.textContent+=msg[j++]}else{clearInterval(t);let d=document.createElement('div');d.innerHTML='<br><button onclick="go(5)">Continue ❤️</button>';el.appendChild(d)}},18)}
 function flowers(){for(let k=0;k<35;k++)setTimeout(()=>{let f=document.createElement('div');f.className='flower';f.textContent=Math.random()>.5?'🌹':'🌸';f.style.left=Math.random()*100+'vw';document.body.appendChild(f);setTimeout(()=>f.remove(),6000)},k*150)}
 function restart(){letter.style.display='none';letter.textContent='';go(1);i=0;iv=setInterval(()=>{if(i<seq.length)atc.textContent=seq[i++];else{clearInterval(iv);go(2)}},1200);}
